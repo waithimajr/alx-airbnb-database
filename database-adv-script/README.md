@@ -11,3 +11,16 @@ This directory contains SQL scripts demonstrating advanced JOIN operations on th
 ## Notes
 - The **FULL OUTER JOIN** query works directly in **PostgreSQL**.
 - For **MySQL**, a `UNION` of `LEFT JOIN` and `RIGHT JOIN` is used to achieve the same effect.
+
+ 
+ Task 2: Apply Aggregations and Window Functions
+
+**Objective:** Analyze bookings and properties using aggregation + ranking.
+
+1. **Total Bookings Per User**
+   ```sql
+   SELECT u.user_id, u.first_name, u.last_name, COUNT(b.booking_id) AS total_bookings
+   FROM Users u
+   LEFT JOIN Bookings b ON u.user_id = b.user_id
+   GROUP BY u.user_id, u.first_name, u.last_name
+   ORDER BY total_bookings DESC;
