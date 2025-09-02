@@ -1,4 +1,5 @@
-1. Non-Correlated Subquery: Find properties where the average rating > 4.0
+-1. Non-Correlated Subquery
+Find all properties where the average rating is greater than 4.0
 SELECT 
     p.property_id,
     p.title,
@@ -12,7 +13,8 @@ WHERE p.property_id IN (
 )
 ORDER BY p.property_id;
 
-2. Correlated Subquery: Find users who have made more than 3 bookings
+2. Correlated Subquery
+ Find users who have made more than 3 bookings
 SELECT 
     u.user_id,
     u.first_name,
