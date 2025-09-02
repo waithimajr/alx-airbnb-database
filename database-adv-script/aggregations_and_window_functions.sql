@@ -14,7 +14,7 @@ LEFT JOIN Bookings b ON u.user_id = b.user_id
 GROUP BY u.user_id, u.first_name, u.last_name
 ORDER BY total_bookings DESC;
 
--- 2️⃣ Rank properties based on the total number of bookings
+- Rank properties based on the total number of bookings
 SELECT 
     p.property_id,
     p.property_name,
