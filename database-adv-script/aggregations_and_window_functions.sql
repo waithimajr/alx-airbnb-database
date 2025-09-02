@@ -1,5 +1,5 @@
-1. Aggregation Query
--Find the total number of bookings made by each user
+Query 1: Aggregation with COUNT and GROUP BY
+- Find the total number of bookings made by each user
 SELECT 
     u.user_id,
     u.first_name,
@@ -11,8 +11,8 @@ LEFT JOIN Bookings b
 GROUP BY u.user_id, u.first_name, u.last_name
 ORDER BY total_bookings DESC;
 
-2. Window Function Query
--Rank properties based on the total number of bookings
+Query 2: Window Function (RANK)
+-Rank properties based on total number of bookings
 SELECT 
     p.property_id,
     p.title,
